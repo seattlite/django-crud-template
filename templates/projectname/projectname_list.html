@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<ul>
+    {% for projectname in object_list %}
+    <li> 
+    <div id="sample-{{projectname.id}}" name="{{projectname.id }}">
+        {{ projectname.id }} -- {{ projectname}} 
+    </div>
+    <a href="{% url 'projectname-edit' projectname.id %}">  {{ projectname.question }} </a>
+    <a href="{% url 'projectname-delete' projectname.id %}">delete</a>
+
+    </li>
+
+    {% empty %}
+    <li>No projectnames yet.</li>
+    {% endfor %}
+</ul>
+{% endblock  %}
+
+

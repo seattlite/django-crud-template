@@ -1,0 +1,15 @@
+create-project.py <appname> - Creates a new application with the skeleton files in projectname folder configured for the application. This script currently works only for windows.
+    application is created at the following folders 
+        - [appname] <-- core code files live here. views, urls, tests, admin. 
+        - [template\appname] <-- all the template files live here. 
+
+create-project.py <appname> clean - Cleans a previously created application folders
+To get this application to work - 
+    1. Add the application to the project settings file 
+    2. Add the application in the project urls file
+
+after these steps do a 
+    python manage.py syncdb
+    python manage.py runserver 
+
+goto http://127.0.0.1:8000/appname to view the application in action!!
